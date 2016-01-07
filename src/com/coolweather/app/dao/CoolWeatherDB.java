@@ -14,12 +14,18 @@ import com.coolweather.app.entity.Province;
 
 public class CoolWeatherDB {
 
-	// 数据库名
+	/**
+	 * 数据库名
+	 */
 	public static final String DB_NAME = "cool_weather";
 
-	// 数据库版本
+	/**
+	 * 数据库版本
+	 */
 	public static final int VERSION = 1;
+
 	private static CoolWeatherDB coolWeatherDB;
+
 	private SQLiteDatabase db;
 
 	/**
@@ -41,9 +47,8 @@ public class CoolWeatherDB {
 		return coolWeatherDB;
 	}
 
-	// =================province表====================
 	/**
-	 * 插入：将Province实例存储到数据库。
+	 * 将Province实例存储到数据库。
 	 */
 	public void saveProvince(Province province) {
 		if (province != null) {
@@ -55,7 +60,7 @@ public class CoolWeatherDB {
 	}
 
 	/**
-	 * 查：从数据库读取全国所有的省份信息。
+	 * 从数据库读取全国所有的省份信息。
 	 */
 	public List<Province> loadProvinces() {
 		List<Province> list = new ArrayList<Province>();
@@ -74,8 +79,6 @@ public class CoolWeatherDB {
 		}
 		return list;
 	}
-
-	// ===============city表==========================
 
 	/**
 	 * 将City实例存储到数据库。
@@ -112,7 +115,6 @@ public class CoolWeatherDB {
 		return list;
 	}
 
-	// =========================County表=======================
 	/**
 	 * 将County实例存储到数据库。
 	 */
